@@ -48,10 +48,10 @@ function showList(){
 
     myTable += '<tr><td>'+ ' ' +'</td>' +
         '<td>'+' ' +'</td>' +
-        '<td>'+ mostFrequent() +'</td>' +
+        '<td>'+ mostFrequentNumbers() +'</td>' +
+        '<td>'+ salaryAverage() +'</td>' +
         '<td>'+' ' +'</td>' +
-        '<td>'+' ' +'</td>' +
-        '<td>'+  +'</td>' +
+        '<td>'+ '' +'</td>' +
         '</tr>';
 
 
@@ -60,16 +60,41 @@ function showList(){
     container.innerHTML = myTable;
 }
 
+function mostFrequentFirstName(){
+    var names = [];
+    for(var i in employeesList){
+        names.push(employeesList[i].firstName);
+    }
+    var index = 1;
+    var max = 1;
+    var max2 = 1;
+    names.sort();
+
+    for(var j = 1; j<names.length; j++){
+
+        if(names[j-1] == names[j]){
+            index2++;
+        }
+        else{
+            if(index2 > index){
+                index = index2;
+                max =
+            }
+        }
+    }
+
+}
+
 function salaryAverage(){
     var salary = 0;
     for(var i in employeesList){
         salary += employeesList[i].salary;
     }
     var length = employeesList.length;
-    return salary/employeesList
+    return salary/length;
 }
 
-function mostFrequent(){
+function mostFrequentNumbers(){
     var counter = [0,0,0,0,0,0,0,0,0,0];
     for(var i in employeesList){
         var phone = employeesList[i].phone;
