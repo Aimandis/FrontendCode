@@ -46,8 +46,8 @@ function showList(){
             '</tr>';
     }
 
-    myTable += '<tr><td>'+ ' ' +'</td>' +
-        '<td>'+' ' +'</td>' +
+    myTable += '<tr><td>'+ mostFrequentFirstName() +'</td>' +
+        '<td>'+ getUniqueNames() +'</td>' +
         '<td>'+ mostFrequentNumbers() +'</td>' +
         '<td>'+ salaryAverage() +'</td>' +
         '<td>'+' ' +'</td>' +
@@ -60,12 +60,42 @@ function showList(){
     container.innerHTML = myTable;
 }
 
+function getUniqueNames(){
+    var names = [];
+    for(var i in employeesList){
+        names.push(employeesList[i].lastName);
+    }
+
+    names.sort();
+
+    var unique = 0;
+
+    if(employeesList.length > 1) {
+        for (var j = 0; j < names.length - 1; j++) {
+            var index = j;
+            while (names[j] == names[j + 1] && j < names.length - 1) {
+                j++;
+            }
+            if (index == j)
+                unique++;
+        }
+        if(employeesList[employeesList.length-1] != employeesList[employeesList.length-2])
+            unique++;
+    }
+    else{
+        if(employeesList.length == 1)
+            unique = 1;
+    }
+
+    return unique;
+}
+
 function mostFrequentFirstName(){
     var names = [];
     for(var i in employeesList){
         names.push(employeesList[i].firstName);
     }
-    var index = 1;
+    var value = names[0];
     var max = 1;
     var max2 = 1;
     names.sort();
@@ -73,16 +103,16 @@ function mostFrequentFirstName(){
     for(var j = 1; j<names.length; j++){
 
         if(names[j-1] == names[j]){
-            index2++;
+            max2++;
         }
         else{
-            if(index2 > index){
-                index = index2;
-                max =
+            if(max2 > max){
+                value = names[j-1];
+                max = max2;
             }
         }
     }
-
+    return value;
 }
 
 function salaryAverage(){
@@ -121,7 +151,7 @@ var Employee = function(firstName, lastName, phone, salary){
     this.lastName = lastName;
     this.phone = phone;
     this.salary = salary;
-}
+};
 
 function addEmployee(){
     var firstName = document.getElementById("firstName").value;
@@ -156,6 +186,107 @@ function rowView(row){
 }
 
 function deleteRow(row){
-    delete employeesList[row];
+    employeesList.splice(row,1);
     showList();
+}
+
+function getSortNr(){
+    var value = document.getElementById('sortnumber');
+    switch (parseInt(value.value)){
+        case 1:
+            sortByFirstName();
+            break;
+        case 2:
+            sortByLastName();
+            break;
+        case 3:
+            sortByPhone();
+            break;
+        case 4:
+            sortBySalary();
+            break;
+        default:
+            break;
+    }
+}
+
+
+function sortByFirstName(){
+
+    for(var i in employeesList){
+        for(var j in employeesList){
+            if(employeesList[i].firstName < employeesList[j].firstName){
+                var emp = employeesList[i];
+                employeesList[i] = employeesList[j];
+                employeesList[j] = emp;
+            }
+        }
+    }
+    showList();
+}
+
+function sortByLastName(){
+
+    for(var i in employeesList){
+        for(var j in employeesList){
+            if(employeesList[i].lastName < employeesList[j].lastName){
+                var emp = employeesList[i];
+                employeesList[i] = employeesList[j];
+                employeesList[j] = emp;
+            }
+        }
+    }
+    showList();
+}
+
+function sortByPhone(){
+
+    for(var i in employeesList){
+        for(var j in employeesList){
+            if(employeesList[i].phone < employeesList[j].phone){
+                var emp = employeesList[i];
+                employeesList[i] = employeesList[j];
+                employeesList[j] = emp;
+            }
+        }
+    }
+    showList();
+}
+
+function sortBySalary(){
+
+    for(var i in employeesList){
+        for(var j in employeesList){
+            if(employeesList[i].salary < employeesList[j].salary){
+                var emp = employeesList[i];
+                employeesList[i] = employeesList[j];
+                employeesList[j] = emp;
+            }
+        }
+    }
+    showList();
+}
+
+function findWord(){
+    var backup = employeesList;
+
+    var input = document.getElementById('findword');
+    var value = input.value;
+    for(var i in employeesList){
+        var isnot = true;
+        var employee = employeesList[i];
+
+        for(var j in employee){
+            if(employee.hasOwnProperty(j)){
+                var prop = employee[j] + '';
+                if(prop.indexOf(value) > -1){
+                    isnot = false;
+                }
+            }
+        }
+        if(isnot)
+            employeesList.splice(i,1);
+    }
+    showList();
+    employeesList = backup;
 }
