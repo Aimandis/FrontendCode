@@ -154,6 +154,7 @@ var Employee = function(firstName, lastName, phone, salary){
 };
 
 function addEmployee(){
+
     var firstName = document.getElementById("firstName").value;
     var lastName = document.getElementById("lastName").value;
     var phone = document.getElementById("phone").value;
@@ -268,6 +269,7 @@ function sortBySalary(){
 }
 
 function findWord(){
+
     var backup = employeesList;
 
     var input = document.getElementById('findword');
