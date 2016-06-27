@@ -1,8 +1,8 @@
 /**
  * Created by Aimandis on 6/24/2016.
  */
-hr.controller('OtherController',['$scope',function ($scope){
-    $scope.setTitle = function(){
+hrApp.controller('OtherController',['$scope',function ($scope){
+    $scope.title = "Ploi de vara.";
+    $scope.id  = $scope.identifier;
         
-    }
-}]);
+    }]);

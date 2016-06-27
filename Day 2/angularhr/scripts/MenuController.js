@@ -3,10 +3,10 @@
  */
 
 hrApp.controller('MenuController', ['$scope', function($scope){
-    $scope.demoActonList=[
+    $scope.demoActionList=[
         {
         label:"OtherScope",
-        url:"views/childscope.html"
+        url:"childscope.html"
         }
     ];
 }]);

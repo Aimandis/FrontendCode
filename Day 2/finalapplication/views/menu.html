@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<nav class="navbar navbar-default">
+    <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li>
+                <a class="navbar-brand" href="#">Menu</a>
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown" ng-controller="MenuController">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Employees<span
+                        class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li ng-repeat="employee in employeesList">
+                        <a href='{{employee.url}}'>{{employee.label}}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+</body>
+</html>

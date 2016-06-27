@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>HR APP</title>
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
-    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/fist/css/bootstrap-them.css"/>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
 
 </head>
 <body>
@@ -17,10 +17,12 @@
         <p>
             Parent title is: {{title}}
         </p>
-        <p>
-            <a class="btn btn-primary btn-lg" role="button"
-               ng-click="setTitle()">SetTitle</a>
-        </p>
+        <div ng-controller="ChildController">
+            <p>
+                <a class="btn btn-primary btn-lg" role="button"
+                   ng-click="setTitle()">SetTitle</a>
+            </p>
+        </div>
     </div>
 </div>
 
@@ -29,5 +31,6 @@
 <script type="text/javascript" src="bower_components/angular/angular.js"></script>
 <script type="text/javascript" src="scripts/app.js"></script>
 <script type="text/javascript" src="scripts/OtherController.js"></script>
+<script type="text/javascript" src="scripts/ChildController.js"></script>
 </body>
 </html>

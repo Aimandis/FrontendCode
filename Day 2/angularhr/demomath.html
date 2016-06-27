@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math operations</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
+</head>
+<body>
+<h1>Math Operations</h1>
+
+
+<div ng-app="hrApp">
+    <div class="panel panel-default" ng-controller="OperationsController">
+        <div class="panel-body">
+            <p>
+                First number <input type="number" ng-model="firstNumber">
+            </p>
+            <p>
+                Second number <input type="number" ng-model="secondNumber">
+            </p>
+            <p>
+                Result : <a href="" ng-bind="result"></a>
+            </p>
+
+            <p>
+            <p>
+                <script></script>
+            </p>
+        </div>
+
+        <div class="panel-body">
+            <button type="button" class="btn btn-default" ng-click="sum()">Add</button>
+            <button type="button" class="btn btn-default" ng-click="substract()">Subtract</button>
+            <button type="button" class="btn btn-default" ng-click="multiply()">Multiply</button>
+            <button type="button" class="btn btn-default" ng-click="divide()">Divide</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
+<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="scripts/app.js"></script>
+<script type="text/javascript" src="scripts/OperationsController.js"></script>
+
+</body>
+</html>
