@@ -20,6 +20,9 @@ hrApp.config(['$routeProvider',
         }).when('/employeeview/:employeeid', {
             templateUrl:'views/employeeview.html',
             controller:'EmployeeViewController'
+        }).when('/user',{
+            templateUrl:'views/user.html',
+            controller: 'UserController'
         }).
         // TODO #4 add #/numbers route and use redirectTo
         otherwise({
