@@ -1,45 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
 
-</head>
-<body>
-<div ng-app="hrApp">
-    <div ng-controller="UserController">
-        <p>
-            <span>First Name</span><input type="text" ng-model="firstName">
-        </p>
-        <p>
-            <span>Last Name</span><input type="text" ng-model="lastName">
-        </p>
-        <p>
-            <span>ID</span><input type="number" ng-model="id">
-        </p>
-        <p>
-            <span>age</span><input type="number" ng-model="age">
-        </p>
-        <p>
-            <button type="button" class="btn btn-default" ng-click="back()">Back</button>
-        </p>
-        <p>
-            <button type="button" class="btn btn-default" ng-click="reset()">Reset</button>
-        </p>
-        <p>
-            <button type="button" class="btn btn-default" ng-click="save()">Save</button>
-        </p>
-        <p>
-            <button type="button" class="btn btn-default" ng-click="hide()">Show/Hide</button>
-        </p>
-        <div ng-hide="hidden">
-            <p>
-                <li ng-repeat="user in users">{{user.firstName}} {{user.lastName}} {{user.id}} {{user.age}}</li>
-            </p>
-        </div>
-    </div>
+
+<p>
+    <span>First Name</span><input type="text" ng-model="firstName">
+</p>
+<p>
+    <span>Last Name</span><input type="text" ng-model="lastName">
+</p>
+<p>
+    <span>ID</span><input type="number" ng-model="id">
+</p>
+<p>
+    <span>age</span><input type="number" ng-model="age">
+</p>
+<p>
+    <button type="button" class="btn btn-default" ng-click="back()">Back</button>
+</p>
+<p>
+    <button type="button" class="btn btn-default" ng-click="reset()">Reset</button>
+</p>
+<p>
+    <button type="button" class="btn btn-default" ng-click="save()">Save</button>
+</p>
+<p>
+    <button type="button" class="btn btn-default" ng-click="hide()">Show/Hide</button>
+</p>
+<div ng-hide="hidden">
+    <p>
+    <li ng-repeat="user in users">{{user.firstName}} {{user.lastName}} {{user.id}} {{user.age}}</li>
+    </p>
 </div>
-
-
-</body>
-</html>

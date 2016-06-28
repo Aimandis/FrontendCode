@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<div>
+    <span>Color</span><select ng-model = "colortext" ng-options="item as item.text for item in colors track by item.text" ng-change="changeColor()"></select>
+    <p></p>
+    <span>Type</span><select ng-model = "colortype" ng-options="color.text group by color.type for color in colors"></select>
+    <p>
+        <span class="ng-class: myclass">Some text</span>
+    </p>
+    <p>
+        <input ng-model="sort" type="text">
+    </p>
+    <div class="contained">
+        <li ng-repeat="color in colors | filter: {text: sort} ">{{color.text}}</li>
+    </div>
+</div>
+
