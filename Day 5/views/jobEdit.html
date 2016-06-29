@@ -1,0 +1,52 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="panel-title">View job <b>{{job.jobTitle}}</b></h2>
+    </div>
+    <div class="panel-body">
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <!--
+                    What does this for?
+                    <label for="firstName">Job ID: </label>
+                    <span id="firstName" class="form-control">{{job.jobId}}</span>
+                -->
+
+
+                    <label>Job Title </label>
+                    <input class="form-control" ng-model="job.jobTitle">
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label>Max Salary: </label>
+                    <input class="form-control" ng-model="job.maxSalary">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label>Min Salary: </label>
+                    <input class="form-control" ng-model="job.minSalary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5"></div>
+                <div class="col-md-7">
+                    <div class="container">
+                        <p>
+                            <button class="btn btn-default" ng-click="back()">Back</button>
+                        <p>
+                        <p>
+                            <button class="btn btn-default" ng-click="save()">Save</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

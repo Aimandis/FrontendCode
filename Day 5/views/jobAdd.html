@@ -1,0 +1,57 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="panel-title">Add employee</h2>
+    </div>
+    <div class="panel-body">
+        <ng-form name="jobAddForm">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group" ng-class="{'has-error' : jobAddForm.manager.$invalid}">
+                        <label>Job ID</label>
+                        <input type="text" ng-model="job.jobId" required>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!--TODO#HR3-->
+                    <div class="form-group" ng-class="{ 'has-error': jobAddForm.manager.$invalid }">
+                        <label>Job Title</label>
+                        <input type="text" ng-model="job.jobTitle" required>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!--TODO#HR3-->
+                    <div class="form-group" ng-class="{ 'has-error': jobAddForm.manager.$invalid }">
+                        <label>Max Salary</label>
+                        <input type="number" ng-model="job.maxSalary">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <!--TODO#HR3-->
+                    <div class="form-group" ng-class="{ 'has-error': jobAddForm.manager.$invalid }">
+                        <label>Min Salary</label>
+                        <input type="number" ng-model="job.minSalary">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5"></div>
+                <div class="col-md-7">
+                    <div class="container">
+                        <!--TODO#HR4-->
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                <button class="btn btn-default" ng-click="create(job)" ng-disabled="jobAddForm.$invalid">Save</button>
+            </p>
+            <p>
+                <button class="btn btn-default" ng-click="reset()">Reset</button>
+            </p>
+
+        </ng-form>
+    </div>
+</div>
